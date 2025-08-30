@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solitice — Timeless Watches</title>
+  <meta name="description" content="Solitice — premium watches. Clean e‑commerce template." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#f6c85f; /* gold */
+      --white:#ffffff;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg) 0%, #071023 100%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+
+    /* Container */
+    .container{max-width:1200px;margin:0 auto;padding:28px}
+
+    /* NAV */
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffecd2);display:flex;align-items:center;justify-content:center;color:#111;font-weight:700;font-size:18px;font-family:'Playfair Display',serif}
+    .brand h1{margin:0;font-size:18px}
+    nav a{color:var(--muted);text-decoration:none;margin-right:18px;font-size:15px}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--white);cursor:pointer}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;margin-top:28px}
+    .hero-left h2{font-family:'Playfair Display',serif;font-size:44px;margin:0 0 8px}
+    .hero-left p{color:var(--muted);max-width:60%;margin:0 0 18px}
+    .cta-row{display:flex;gap:12px}
+    .primary-cta{background:var(--accent);color:#111;padding:12px 18px;border-radius:10px;font-weight:700;border:none}
+
+    /* Hero card image */
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:18px;backdrop-filter:blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .watch-img{width:100%;height:360px;border-radius:12px;object-fit:cover;background:#081226;display:block}
+    .price-tag{margin-top:12px;display:flex;align-items:center;justify-content:space-between}
+
+    /* Product grid */
+    .section{margin-top:44px}
+    .section h3{margin:0 0 12px;font-size:20px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .product-thumb{width:100%;height:220px;border-radius:10px;object-fit:cover;background:#071726}
+    .product-title{font-weight:600;margin:10px 0 6px}
+    .product-meta{color:var(--muted);font-size:13px}
+    .price{font-weight:700;margin-top:8px}
+    .card .card-actions{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+
+    /* Cart drawer */
+    .cart-drawer{position:fixed;right:20px;top:80px;width:360px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 10px 40px rgba(2,6,23,0.6);max-height:70vh;overflow:auto;display:none}
+
+    /* Footer */
+    footer{margin-top:60px;padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .hero-left p{max-width:100%}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:620px){
+      .nav{flex-direction:column;align-items:flex-start}
+      .grid{grid-template-columns:1fr}
+      .hero-left h2{font-size:28px}
+      .hero-card{padding:10px}
+      .hero{gap:16px}
+    }
+
+    /* Small helpers */
+    .muted{color:var(--muted)}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:999px;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">S</div>
+        <div>
+          <h1>Solitice</h1>
+          <div class="muted" style="font-size:12px">Timeless watches</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#collections">Collections</a>
+        <a href="#best">Best Sellers</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn" id="searchBtn">Search</button>
+        <button class="btn" id="accountBtn">Sign in</button>
+        <button class="btn" id="cartBtn">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h2>Elegance that lasts — <span style="color:var(--accent)">Solitice</span></h2>
+          <p>Discover precision-crafted watches that blend classic design with modern engineering. Every Solitice timepiece is a statement — handcrafted for moments that last.</p>
+          <div class="cta-row">
+            <button class="primary-cta">Shop Collection</button>
+            <button class="btn">Explore Story</button>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+            <div class="tag">Free shipping</div>
+            <div class="tag">2-year warranty</div>
+            <div class="tag">30-day returns</div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5a62c6b0f0e3f3b6c6cae7a8c9b3b3b4" alt="Solitice watch" class="watch-img">
+          <div class="price-tag">
+            <div>
+              <div style="font-weight:700">Solitice Heritage — 40mm</div>
+              <div class="muted">Automatic • Stainless Steel</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:18px;color:var(--accent);font-weight:700">₹14,999</div>
+              <div class="muted" style="font-size:12px">Limited edition</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="best" class="section">
+        <h3>Best Sellers</h3>
+        <div class="grid" id="productGrid">
+          <!-- Product cards inserted by JS -->
+        </div>
+      </section>
+
+      <section id="collections" class="section">
+        <h3>Collections</h3>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card" style="min-width:220px;flex:1">
+            <div style="font-weight:700">Heritage</div>
+            <div class="muted" style="font-size:13px;margin-top:6px">Classic designs inspired by vintage timepieces.</div>
+          </div>
+          <div class="card" style="min-width:220px;flex:1">
+            <div style="font-weight:700">Sport</div>
+            <div class="muted" style="font-size:13px;margin-top:6px">Robust, water-resistant watches for active lifestyles.</div>
+          </div>
+          <div class="card" style="min-width:220px;flex:1">
+            <div style="font-weight:700">Explorer</div>
+            <div class="muted" style="font-size:13px;margin-top:6px">Durable pieces built for adventure.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h3>About Solitice</h3>
+        <p class="muted">At Solitice we combine careful craftsmanship with contemporary aesthetics. Each watch is assembled and tested by experts to ensure long-lasting performance and style.</p>
+      </section>
+
+      <section id="contact" class="section">
+        <h3>Stay in touch</h3>
+        <p class="muted">Sign up for new arrivals and exclusive drops.</p>
+        <form id="subscribeForm" style="display:flex;gap:8px;max-width:480px;margin-top:12px">
+          <input type="email" placeholder="Your email" required style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)">
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>Solitice</strong>
+          <div class="muted" style="font-size:13px">© <span id="year"></span> All rights reserved.</div>
+        </div>
+        <div class="muted">Designed with care • Crafted for life</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Cart drawer -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <h4>Your cart</h4>
+    <div id="cartItems" style="margin-top:12px"></div>
+    <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+      <div class="muted">Total</div>
+      <div style="font-weight:700" id="cartTotal">₹0</div>
+    </div>
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <button class="primary-cta" id="checkoutBtn">Checkout</button>
+      <button class="btn" id="closeCart">Close</button>
+    </div>
+  </aside>
+
+  <script>
+    // Simple product data — replace or load dynamically from backend
+    const products = [
+      {id:1,title:'Heritage 40mm',desc:'Automatic • Stainless Steel • Brown leather',price:14999,img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4'},
+      {id:2,title:'Sport Chrono',desc:'Quartz • Chronograph • 100m water resistant',price:9999,img:'https://images.unsplash.com/photo-1518544881235-6f84f0b0f3a9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1'},
+      {id:3,title:'Explorer Field',desc:'Rugged • Lume hands • Nylon strap',price:7999,img:'https://images.unsplash.com/photo-1585386959984-a415522c9f8f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2'},
+      {id:4,title:'Classic Slim',desc:'Ultra-thin • Minimal dial • Mesh band',price:6999,img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=4'},
+      {id:5,title:'Aviator GMT',desc:'Dual time zone • Sapphire crystal',price:19999,img:'https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5'},
+      {id:6,title:'Diver Pro',desc:'Automatic • 300m • Uni-directional bezel',price:22999,img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6'}
+    ];
+
+    // Render products
+    const grid = document.getElementById('productGrid');
+    function money(x){ return '₹'+x.toLocaleString('en-IN'); }
+    products.forEach(p=>{
+      const card = document.createElement('div'); card.className='card';
+      card.innerHTML = `
+        <img class="product-thumb" src="${p.img}" alt="${p.title}">
+        <div class="product-title">${p.title}</div>
+        <div class="product-meta">${p.desc}</div>
+        <div class="price">${money(p.price)}</div>
+        <div class="card-actions">
+          <button class="btn" data-id="${p.id}" onclick="openDetails(${p.id})">View</button>
+          <button class="primary-cta" data-id="${p.id}" onclick="addToCart(${p.id})">Add to cart</button>
+        </div>`;
+      grid.appendChild(card);
+    });
+
+    // Simple modal-ish details (browser alert fallback)
+    function openDetails(id){
+      const p = products.find(x=>x.id===id);
+      if(!p) return alert('Product not found');
+      const html = `${p.title}\n${p.desc}\nPrice: ${money(p.price)}\n\nAdd to cart?`;
+      if(confirm(html)) addToCart(id);
+    }
+
+    // Simple cart implementation
+    const cart = {};
+    function addToCart(id){
+      cart[id] = (cart[id]||0)+1; renderCart();
+    }
+    function removeFromCart(id){
+      delete cart[id]; renderCart();
+    }
+
+    function renderCart(){
+      const drawer = document.getElementById('cartDrawer');
+      const itemsEl = document.getElementById('cartItems');
+      itemsEl.innerHTML = '';
+      let total = 0; let count = 0;
+      for(const id in cart){
+        const qty = cart[id];
+        const p = products.find(x=>x.id==id);
+        const row = document.createElement('div');
+        row.style.display='flex';row.style.justifyContent='space-between';row.style.alignItems='center';row.style.padding='8px 0';
+        row.innerHTML = `<div style="flex:1">
+          <div style="font-weight:600">${p.title}</div>
+          <div class="muted" style="font-size:13px">${money(p.price)} × ${qty}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <button class="btn" onclick="decrease(${id})">−</button>
+          <div style="width:28px;text-align:center">${qty}</div>
+          <button class="btn" onclick="increase(${id})">+</button>
+          <button class="btn" style="margin-left:8px" onclick="removeFromCart(${id})">Remove</button>
+        </div>`;
+        itemsEl.appendChild(row);
+        total += p.price * qty; count += qty;
+      }
+      document.getElementById('cartTotal').textContent = money(total);
+      document.getElementById('cartCount').textContent = count;
+      drawer.style.display = count>0 ? 'block' : 'none';
+    }
+    function increase(id){ cart[id] = (cart[id]||0)+1; renderCart(); }
+    function decrease(id){ if(cart[id]>1) cart[id]--; else delete cart[id]; renderCart(); }
+
+    // Cart drawer controls
+    document.getElementById('cartBtn').addEventListener('click',()=>{
+      const drawer = document.getElementById('cartDrawer'); drawer.style.display = drawer.style.display==='block' ? 'none' : 'block';
+    });
+    document.getElementById('closeCart').addEventListener('click',()=>{document.getElementById('cartDrawer').style.display='none'});
+
+    // Small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('subscribeForm').addEventListener('submit',e=>{e.preventDefault();alert('Thanks for subscribing!');e.target.reset();});
+
+    // Initialize with 1 item for demo
+    addToCart(1);
+  </script>
+</body>
+</html>
