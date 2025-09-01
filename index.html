@@ -1,112 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF‑8">
-  <meta name="viewport" content="width=device‑width,initial‑scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solitice Watches</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body { margin:0; font-family:Montserrat, sans‑serif; background:#f9f9f9; color:#333; }
-    header { position:sticky; top:0; background:#fff; padding:12px 24px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 2px 4px rgba(0,0,0,0.05); }
-    .logo { font-family:Playfair Display; font-size:24px; color:#c49a6c; }
-    nav a { margin: 0 12px; color:#555; text-decoration:none; font-size:14px; }
-    .hero { display:flex; flex-wrap:wrap; padding:40px 24px; gap:24px; align-items:center; }
-    .hero img { max-width:480px; border-radius:8px; width:100%; }
-    .hero .txt { flex:1; min-width:280px; }
-    .btn { background:#c49a6c; color:#fff; padding:10px 18px; border:none; border-radius:4px; font-weight:600; cursor:pointer; text-decoration:none;}
-    .products { padding:24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
-    .card { background:#fff; padding:16px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.1); transition:transform .2s; }
-    .card:hover { transform:translateY(-4px); }
-    .card img { width:100%; border-radius:4px; }
-    .card h4 { margin:12px 0 4px; font-size:16px; color:#222; }
-    .price { color:#c49a6c; font-weight:600; margin-top:8px; }
-    footer { background:#fff; padding:32px 24px; margin-top:40px; color:#666; font-size:14px; }
-    footer .footer‑grid { display:grid; grid‑template‑columns:repeat(auto‑fit,minmax(150px,1fr)); gap:24px; }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <div class="logo">Solitice</div>
-    <nav>
-      <a href="#collections">Collections</a>
-      <a href="#bestsellers">Best Sellers</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div>
-      <a href="#" style="margin-right:16px;color:#555;font-size:14px;">Search</a>
-      <a href="#" style="margin-right:16px;color:#555;font-size:14px;">Account</a>
-      <a href="#" class="btn">Cart (0)</a>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="border-b shadow-sm">
+    <div class="container mx-auto flex justify-between items-center p-6">
+      <h1 class="text-2xl font-bold tracking-wider">Solitice</h1>
+      <nav class="space-x-6">
+        <a href="#home" class="hover:text-gray-500">Home</a>
+        <a href="#collection" class="hover:text-gray-500">Collection</a>
+        <a href="#about" class="hover:text-gray-500">About</a>
+        <a href="#contact" class="hover:text-gray-500">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="txt">
-      <h1 style="font-family:Playfair Display;font-size:36px;color:#333;">Discover Timeless Elegance</h1>
-      <p style="font-size:16px;line-height:1.5;color:#555;">Explore Solitice premium watches—where craftsmanship meets contemporary design.</p>
-      <a href="#products" class="btn">Shop Now</a>
-    </div>
-    <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=800&auto=format&fit=crop" alt="Solitice watch hero">
+  <!-- Hero -->
+  <section id="home" class="text-center py-20 bg-gray-50">
+    <h2 class="text-4xl font-bold mb-4">Luxury Redefined</h2>
+    <p class="text-lg mb-8">Explore our exclusive collection of timeless Solitice watches.</p>
+    <a href="#collection" class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800">Shop Now</a>
   </section>
 
-  <section id="products" class="products">
-    <div class="card">
-      <a href="#"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=600&auto=format&fit=crop" alt="Heritage 40mm"></a>
-      <h4>Heritage 40 mm</h4>
-      <div class="price">₹14,999</div>
-    </div>
-    <div class="card">
-      <a href="#"><img src="https://images.unsplash.com/photo-1518544881235-6f84f0b0f3a9?q=80&w=600&auto=format&fit=crop" alt="Sport Chrono"></a>
-      <h4>Sport Chrono</h4>
-      <div class="price">₹9,999</div>
-    </div>
-    <div class="card">
-      <a href="#"><img src="https://images.unsplash.com/photo-1585386959984-a415522c9f8f?q=80&w=600&auto=format&fit=crop" alt="Explorer Field"></a>
-      <h4>Explorer Field</h4>
-      <div class="price">₹7,999</div>
-    </div>
-    <div class="card">
-      <a href="#"><img src="https://images.unsplash.com/photo-1601924638867-3ec9b70a9a71?q=80&w=600&auto=format&fit=crop" alt="Classic Slim"></a>
-      <h4>Classic Slim</h4>
-      <div class="price">₹6,999</div>
-    </div>
-    <div class="card">
-      <a href="#"><img src="https://images.unsplash.com/photo-1612810806563-6c69efb7c386?q=80&w=600&auto=format&fit=crop" alt="Aviator GMT"></a>
-      <h4>Aviator GMT</h4>
-      <div class="price">₹19,999</div>
-    </div>
-    <div class="card">
-      <a href="#"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop" alt="Diver Pro"></a>
-      <h4>Diver Pro</h4>
-      <div class="price">₹22,999</div>
+  <!-- Collection -->
+  <section id="collection" class="container mx-auto py-16">
+    <h3 class="text-3xl font-semibold text-center mb-10">Our Collection</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Classic Silver Watch" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Classic Silver</h4>
+          <p class="text-gray-600 mb-4">Elegance and simplicity combined for timeless wear.</p>
+          <a href="#" class="text-black font-medium hover:underline">View Details</a>
+        </div>
+      </div>
+
+      <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1518544889280-cf7e24f69e43" alt="Modern Black Watch" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Modern Black</h4>
+          <p class="text-gray-600 mb-4">A bold design for those who love to make a statement.</p>
+          <a href="#" class="text-black font-medium hover:underline">View Details</a>
+        </div>
+      </div>
+
+      <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3" alt="Luxury Gold Watch" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Luxury Gold</h4>
+          <p class="text-gray-600 mb-4">Premium craftsmanship with a golden touch of luxury.</p>
+          <a href="#" class="text-black font-medium hover:underline">View Details</a>
+        </div>
+      </div>
+
+      <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df" alt="Chronograph Steel Watch" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Chronograph Steel</h4>
+          <p class="text-gray-600 mb-4">Built with precision and performance in mind.</p>
+          <a href="#" class="text-black font-medium hover:underline">View Details</a>
+        </div>
+      </div>
+
+      <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Minimal Leather Watch" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Minimal Leather</h4>
+          <p class="text-gray-600 mb-4">Sleek design paired with classic leather straps.</p>
+          <a href="#" class="text-black font-medium hover:underline">View Details</a>
+        </div>
+      </div>
+
+      <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1520962918287-7448c2878f65" alt="Diver’s Pro Watch" class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Diver’s Pro</h4>
+          <p class="text-gray-600 mb-4">Engineered for adventure with water-resistant build.</p>
+          <a href="#" class="text-black font-medium hover:underline">View Details</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer‑grid">
-      <div>
-        <strong>Solitice</strong><br>
-        Timeless watches, handcrafted with care.
-      </div>
-      <div>
-        <strong>ABOUT</strong><br>
-        <a href="#about" style="color:#666;text-decoration:none;">Our Story</a><br>
-        <a href="#contact" style="color:#666;text-decoration:none;">Contact Us</a>
-      </div>
-      <div>
-        <strong>SUPPORT</strong><br>
-        <a href="#" style="color:#666;text-decoration:none;">Shipping & Returns</a><br>
-        <a href="#" style="color:#666;text-decoration:none;">Warranty</a><br>
-        <a href="#" style="color:#666;text-decoration:none;">FAQ</a>
-      </div>
-      <div>
-        <strong>FOLLOW</strong><br>
-        Instagram • Facebook • Twitter
-      </div>
+  <!-- About -->
+  <section id="about" class="bg-gray-50 py-16">
+    <div class="container mx-auto text-center max-w-3xl">
+      <h3 class="text-3xl font-semibold mb-6">About Solitice</h3>
+      <p class="text-gray-700 leading-relaxed">Solitice creates timepieces that embody elegance, innovation, and craftsmanship. Our watches are more than just accessories; they are a statement of personality and timeless luxury. From classic designs to bold modern looks, we redefine how you wear time.</p>
     </div>
-    <div style="margin-top:24px; text-align:center;">© <span id="year"></span> Solitice. All rights reserved.</div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container mx-auto py-16">
+    <h3 class="text-3xl font-semibold text-center mb-10">Get in Touch</h3>
+    <form class="max-w-xl mx-auto space-y-6">
+      <input type="text" placeholder="Your Name" class="w-full border p-3 rounded" required>
+      <input type="email" placeholder="Your Email" class="w-full border p-3 rounded" required>
+      <textarea placeholder="Message" class="w-full border p-3 rounded h-32" required></textarea>
+      <button type="submit" class="w-full bg-black text-white py-3 rounded hover:bg-gray-800">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-6 text-center">
+    <p>&copy; 2025 Solitice Watches. All Rights Reserved.</p>
   </footer>
-
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
