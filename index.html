@@ -11,20 +11,33 @@
   <header class="border-b shadow-sm">
     <div class="container mx-auto flex justify-between items-center p-6">
       <h1 class="text-2xl font-bold tracking-wider">Solitice</h1>
-      <nav class="space-x-6">
+      <nav class="space-x-6 hidden md:flex">
         <a href="#home" class="hover:text-gray-500">Home</a>
         <a href="#collection" class="hover:text-gray-500">Collection</a>
         <a href="#about" class="hover:text-gray-500">About</a>
         <a href="#contact" class="hover:text-gray-500">Contact</a>
       </nav>
+      <div class="flex items-center space-x-4">
+        <input type="text" placeholder="Search" class="border rounded px-3 py-1 hidden sm:block">
+        <button class="hover:text-gray-500">🛒</button>
+        <a href="#signin" class="hover:text-gray-500">Sign In</a>
+        <a href="#signup" class="hover:text-gray-500">Sign Up</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="text-center py-20 bg-gray-50">
-    <h2 class="text-4xl font-bold mb-4">Luxury Redefined</h2>
-    <p class="text-lg mb-8">Explore our exclusive collection of timeless Solitice watches.</p>
-    <a href="#collection" class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800">Shop Now</a>
+  <section id="home" class="relative bg-gray-100">
+    <div class="container mx-auto flex flex-col md:flex-row items-center py-20">
+      <div class="md:w-1/2 text-center md:text-left px-6">
+        <h2 class="text-4xl font-bold mb-4">Luxury Redefined</h2>
+        <p class="text-lg mb-8">Explore our exclusive collection of timeless Solitice watches.</p>
+        <a href="#collection" class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800">Shop Now</a>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3w5MTMyMnwwfDF8c2VhcmNofDJ8fHdhdGNofGVufDB8fHx8MTcwMjQ1NzkyOHww&auto=format&fit=crop&w=1000&q=80" alt="Man with a Watch" class="rounded-lg shadow-lg">
+      </div>
+    </div>
   </section>
 
   <!-- Collection -->
@@ -32,7 +45,7 @@
     <h3 class="text-3xl font-semibold text-center mb-10">Our Collection</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
       <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Classic Silver Watch" class="w-full h-64 object-cover">
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=600&q=80" alt="Classic Silver Watch" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="font-semibold text-lg mb-2">Classic Silver</h4>
           <p class="text-gray-600 mb-4">Elegance and simplicity combined for timeless wear.</p>
@@ -41,7 +54,7 @@
       </div>
 
       <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1518544889280-cf7e24f69e43" alt="Modern Black Watch" class="w-full h-64 object-cover">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Modern Black Watch" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="font-semibold text-lg mb-2">Modern Black</h4>
           <p class="text-gray-600 mb-4">A bold design for those who love to make a statement.</p>
@@ -50,7 +63,7 @@
       </div>
 
       <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3" alt="Luxury Gold Watch" class="w-full h-64 object-cover">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=600&q=80" alt="Luxury Gold Watch" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="font-semibold text-lg mb-2">Luxury Gold</h4>
           <p class="text-gray-600 mb-4">Premium craftsmanship with a golden touch of luxury.</p>
@@ -59,7 +72,7 @@
       </div>
 
       <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df" alt="Chronograph Steel Watch" class="w-full h-64 object-cover">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Chronograph Steel Watch" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="font-semibold text-lg mb-2">Chronograph Steel</h4>
           <p class="text-gray-600 mb-4">Built with precision and performance in mind.</p>
@@ -68,7 +81,7 @@
       </div>
 
       <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Minimal Leather Watch" class="w-full h-64 object-cover">
+        <img src="https://images.unsplash.com/photo-1612817159949-195b6f83f3d4?auto=format&fit=crop&w=600&q=80" alt="Minimal Leather Watch" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="font-semibold text-lg mb-2">Minimal Leather</h4>
           <p class="text-gray-600 mb-4">Sleek design paired with classic leather straps.</p>
@@ -77,7 +90,7 @@
       </div>
 
       <div class="border rounded-lg shadow hover:shadow-lg overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1520962918287-7448c2878f65" alt="Diver’s Pro Watch" class="w-full h-64 object-cover">
+        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80" alt="Diver’s Pro Watch" class="w-full h-64 object-cover">
         <div class="p-6">
           <h4 class="font-semibold text-lg mb-2">Diver’s Pro</h4>
           <p class="text-gray-600 mb-4">Engineered for adventure with water-resistant build.</p>
