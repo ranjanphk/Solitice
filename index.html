@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solitice Premium Watches</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Helvetica Neue', Arial, sans-serif; background:#fff; color:#222; line-height:1.6;}
+    header {display:flex; justify-content:space-between; align-items:center; padding:20px 60px; background:#fff; border-bottom:1px solid #eee; position:sticky; top:0; z-index:1000;}
+    header .logo {font-size:24px; font-weight:bold; letter-spacing:2px;}
+    nav a {margin:0 15px; text-decoration:none; color:#222; font-weight:500;}
+    .nav-right {display:flex; align-items:center; gap:20px;}
+    .nav-right a{color: #222; background-color: #efefef; text-decoration: none; font-weight: 500; border:#eee 1px solid; padding:6px 12px; border-radius:6px;}
+    .hero {height:90vh; background:url('https://images.unsplash.com/photo-1594534475808-b18fc33b045e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat; display:flex; align-items:center; padding:0 60px;}
+    .hero-content {max-width:500px; background:rgba(255,255,255,0.85); padding:30px; border-radius:12px;}
+    .hero h1 {font-size:48px; margin-bottom:20px;}
+    .hero p {margin-bottom:20px; font-size:18px; color:#444;}
+    .btn {display:inline-block; padding:12px 24px; margin:5px; border:none; border-radius:6px; font-size:16px; cursor:pointer; text-decoration:none;}
+    .btn-primary {background:#000; color:#fff;}
+    .btn-outline {border:1px solid #000; background:transparent; color:#000;}
+    section {padding:60px; text-align:center;}
+    .features {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px; margin-top:40px;}
+    .feature {padding:20px; border:1px solid #eee; border-radius:12px; background:#fafafa;}
+    .products, .best-sellers {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:40px;}
+    .product {border:1px solid #eee; border-radius:12px; background:#fff; padding:20px;}
+    .product img {width:100%; height:250px; object-fit:cover; border-radius:8px;}
+    .product h3 {margin:15px 0 10px;}
+    .product p {font-size:14px; color:#555; margin-bottom:10px;}
+    .price {font-weight:bold; margin-bottom:10px;}
+    .testimonials {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-top:40px;}
+    .testimonial {background:#f9f9f9; padding:20px; border-radius:12px; font-style:italic;}
+    footer {background:#111; color:#fff; text-align:center; padding:30px; margin-top:60px;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">SOLITICE</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#features">Features</a>
+      <a href="#products">Products</a>
+      <a href="#bestsellers">Best Sellers</a>
+      <a href="#testimonials">Testimonials</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#search">Search</a>
+      <a href="#login">Login</a>
+      <a href="#signup">Signup</a>
+      <a href="#cart">Cart</a>
+    </div>
+  </header>
 
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Timeless Luxury Watches</h1>
+      <p>Discover the finest collection of premium watches designed for elegance and precision.</p>
+      <a href="#products" class="btn btn-primary">Shop Now</a>
+      <a href="#bestsellers" class="btn btn-outline">Best Sellers</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Why Choose Solitice?</h2>
+    <div class="features">
+      <div class="feature">Premium Quality Materials</div>
+      <div class="feature">Swiss Movement Precision</div>
+      <div class="feature">Luxury & Elegant Designs</div>
+      <div class="feature">2 Year International Warranty</div>
+    </div>
+  </section>
+
+  <section id="products">
+    <h2>Our Collection</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1620625515032-6ed0c1790c75?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Watch">
+        <h3>Classic Silver</h3>
+        <p>Elegant design for every occasion.</p>
+        <div class="price">$249</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1507679622673-989605832e3d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Watch">
+        <h3>Black Edition</h3>
+        <p>Bold look with modern aesthetics.</p>
+        <div class="price">$299</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1604242692760-2f7b0c26856d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0Y2hlc3xlbnwwfHwwfHx8MA%3D%3D" alt="Watch">
+        <h3>Rose Gold</h3>
+        <p>Luxury crafted with elegance.</p>
+        <div class="price">$349</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Watch">
+        <h3>Sport Chrono</h3>
+        <p>Precision for the modern lifestyle.</p>
+        <div class="price">$399</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="bestsellers">
+    <h2>Best Sellers</h2>
+    <div class="best-sellers">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHdhdGNoZXN8ZW58MHx8MHx8fDA%3D" alt="Watch">
+        <h3>Urban Steel</h3>
+        <p>Minimalist design with a strong statement.</p>
+        <div class="price">$279</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1601924357840-3e50ad4dd9fd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHdhdGNofGVufDB8fDB8fHww" alt="Watch">
+        <h3>Executive Gold</h3>
+        <p>Prestige and class in every tick.</p>
+        <div class="price">$399</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdyaXN0d2F0Y2h8ZW58MHx8MHx8fDA%3D" alt="Watch">
+        <h3>Leather Classic</h3>
+        <p>Hand-stitched leather with timeless appeal.</p>
+        <div class="price">$229</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Watch">
+        <h3>Midnight Black</h3>
+        <p>Perfect for evening wear.</p>
+        <div class="price">$319</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1611243705491-71487c2ed137?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHdyaXN0d2F0Y2h8ZW58MHx8MHx8fDA%3D" alt="Watch">
+        <h3>Blue Diver</h3>
+        <p>Water resistant with sporty elegance.</p>
+        <div class="price">$359</div>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">“Absolutely love my new Solitice watch. The quality is unmatched.” – James P.</div>
+      <div class="testimonial">“Stylish, elegant, and reliable. Worth every penny.” – Sophia L.</div>
+      <div class="testimonial">“A watch that truly makes a statement. I get compliments daily.” – Raj K.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Solitice. All rights reserved.</p>
+  </footer>
+</body>
+</html>
