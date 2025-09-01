@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solitice Premium Watches</title>
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family: 'Helvetica Neue', Arial, sans-serif; background:#fff; color:#222; line-height:1.6;}
-    header {display:flex; justify-content:space-between; align-items:center; padding:20px 60px; background:#fff; border-bottom:1px solid #eee; position:sticky; top:0; z-index:1000;}
-    header .logo {font-size:24px; font-weight:bold; letter-spacing:2px;}
-    nav a {margin:0 15px; text-decoration:none; color:#222; font-weight:500;}
-    .nav-right {display:flex; align-items:center; gap:20px;}
-    .nav-right a{color: #222; background-color: #efefef; text-decoration: none; font-weight: 500; border:#eee 1px solid; padding:6px 12px; border-radius:6px;}
-    .hero {height:90vh; background:url('https://images.unsplash.com/photo-1594534475808-b18fc33b045e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat; display:flex; align-items:center; padding:0 60px;}
+
+    /* Header (desktop full menu, mobile burger) */
+    header.header {display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#fff; border-bottom:1px solid #eee; position:sticky; top:0; z-index:1000;}
+    .logo {font-size:22px; font-weight:bold; letter-spacing:2px;}
+    .nav-links a {margin:0 10px; text-decoration:none; color:#222; font-weight:500;}
+    .nav-right {display:flex; align-items:center; gap:10px;}
+    .nav-right a{color:#222; background:#efefef; text-decoration:none; font-weight:500; border:#eee 1px solid; padding:6px 12px; border-radius:6px;}
+    .burger {display:none; font-size:26px; cursor:pointer;}
+    .mobile-menu {display:none; flex-direction:column; background:#fff; border-top:1px solid #eee; position:absolute; top:64px; left:0; width:100%; padding:15px; z-index:999;}
+    .mobile-menu a {margin:8px 0; text-decoration:none; color:#333; font-weight:500;}
+
+    /* Hero — RESTORED to your image */
+    .hero {height:90vh; background:url('https://images.unsplash.com/photo-1594534475808-b18fc33b045e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat; display:flex; align-items:center; padding:0 30px;}
     .hero-content {max-width:500px; background:rgba(255,255,255,0.85); padding:30px; border-radius:12px;}
     .hero h1 {font-size:48px; margin-bottom:20px;}
     .hero p {margin-bottom:20px; font-size:18px; color:#444;}
     .btn {display:inline-block; padding:12px 24px; margin:5px; border:none; border-radius:6px; font-size:16px; cursor:pointer; text-decoration:none;}
     .btn-primary {background:#000; color:#fff;}
     .btn-outline {border:1px solid #000; background:transparent; color:#000;}
-    section {padding:60px; text-align:center;}
+
+    /* Sections */
+    section {padding:60px 20px; text-align:center;}
     .features {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px; margin-top:40px;}
     .feature {padding:20px; border:1px solid #eee; border-radius:12px; background:#fafafa;}
     .products, .best-sellers {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:40px;}
@@ -31,26 +40,54 @@
     .testimonials {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-top:40px;}
     .testimonial {background:#f9f9f9; padding:20px; border-radius:12px; font-style:italic;}
     footer {background:#111; color:#fff; text-align:center; padding:30px; margin-top:60px;}
+
+    /* Responsive header */
+    @media (max-width: 900px) {
+      .nav-links, .nav-right {display:none;}
+      .burger {display:block;}
+    }
   </style>
 </head>
 <body>
-  <header>
+  <!-- Header (responsive) -->
+  <header class="header">
     <div class="logo">SOLITICE</div>
-    <nav>
+
+    <!-- Left nav links (desktop) -->
+    <nav class="nav-links">
       <a href="#">Home</a>
       <a href="#features">Features</a>
       <a href="#products">Products</a>
       <a href="#bestsellers">Best Sellers</a>
       <a href="#testimonials">Testimonials</a>
     </nav>
+
+    <!-- Right-side actions (desktop) -->
     <div class="nav-right">
       <a href="#search">Search</a>
       <a href="#login">Login</a>
       <a href="#signup">Signup</a>
       <a href="#cart">Cart</a>
     </div>
+
+    <!-- Burger (mobile) -->
+    <div class="burger" onclick="toggleMenu()">☰</div>
   </header>
 
+  <!-- Mobile dropdown menu (all links incl. search/login/signup/cart) -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#features">Features</a>
+    <a href="#products">Products</a>
+    <a href="#bestsellers">Best Sellers</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#search">Search</a>
+    <a href="#login">Login</a>
+    <a href="#signup">Signup</a>
+    <a href="#cart">Cart</a>
+  </div>
+
+  <!-- Hero (unchanged text; your background kept) -->
   <section class="hero">
     <div class="hero-content">
       <h1>Timeless Luxury Watches</h1>
@@ -60,6 +97,7 @@
     </div>
   </section>
 
+  <!-- Features (unchanged) -->
   <section id="features">
     <h2>Why Choose Solitice?</h2>
     <div class="features">
@@ -70,6 +108,7 @@
     </div>
   </section>
 
+  <!-- Products (UNCHANGED IMAGES) -->
   <section id="products">
     <h2>Our Collection</h2>
     <div class="products">
@@ -108,6 +147,7 @@
     </div>
   </section>
 
+  <!-- Best Sellers (UNCHANGED IMAGES) -->
   <section id="bestsellers">
     <h2>Best Sellers</h2>
     <div class="best-sellers">
@@ -154,6 +194,7 @@
     </div>
   </section>
 
+  <!-- Testimonials (unchanged) -->
   <section id="testimonials">
     <h2>What Our Customers Say</h2>
     <div class="testimonials">
@@ -163,8 +204,23 @@
     </div>
   </section>
 
+  <!-- Footer (unchanged) -->
   <footer>
     <p>&copy; 2025 Solitice. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMenu(){
+      const m = document.getElementById('mobileMenu');
+      m.style.display = (m.style.display === 'flex') ? 'none' : 'flex';
+    }
+    // Close mobile menu on link click (better UX)
+    document.addEventListener('click', (e)=>{
+      const m = document.getElementById('mobileMenu');
+      if(!m) return;
+      if(e.target.closest('.burger')) return; // handled by toggle
+      if(e.target.closest('#mobileMenu a')) m.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
